@@ -39,16 +39,21 @@ free_seats integer,
 constraint slots primary key(room_id, slot_id)
 );
 
+insert into slots (room_id, slot_id, free_seats) values (1,1,100);
 
 
 create table organizations(
 
-organization_id integer,
+organization_id integer primary key auto_increment,
+organization_name varchar(20),
 manager_name varchar(20),
 	manager_surname varchar(25) not null,
 	email varchar(25),
 	phone_number varchar(20)
 );
-insert into organizations (manager_name,manager_surname,email,phone_number) values ('270','Payroll',null,'1700');
+insert into organizations (organization_name,manager_name,manager_surname,email,phone_number) values ('PoliTo','Mario','Ginobili','mario.ginobili@gmail.com','3926465377');
+insert into organizations (organization_name,manager_name,manager_surname,email,phone_number) values ('UniTo','Giulia','Rossi','giulia.rossi@gmail.com','3334756908');
+insert into organizations (organization_name,manager_name,manager_surname,email,phone_number) values ('Edisu','Silvano','Negri','s.negri@gmail.com','3247658943');
+
 
 commit;
