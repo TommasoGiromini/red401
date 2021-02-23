@@ -30,6 +30,12 @@ location varchar(30),
 address varchar(30),
 city varchar(30)
 );
+ insert into rooms (capacity, location, address, city) values (100, 45.05080786715206, 'via Michelangelo 17bis', 'Turin');
+ insert into rooms (capacity, location, address, city) values (150, 45.067539249059784, 'via Verdi 26M', 'Turin');
+ insert into rooms (capacity, location, address, city) values (200, 45.06417338819595, 'corso Duca Degli Abruzzi 24', 'Turin');
+ insert into rooms (capacity, location, address, city) values (180, 45.073670542813645, 'lungo Dora Siena 100A', 'Turin');
+ insert into rooms (capacity, location, address, city) values (250, 45.0681917369412, "via sant'Ottavio 20", 'Turin');
+
 
 create table slots(
 
