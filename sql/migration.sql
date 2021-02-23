@@ -6,16 +6,38 @@ drop table if exists rooms;
 drop table if exists slots;
 drop table if exists organizations;
 
+create table slots(
+
+room_id integer,
+slot_id integer,
+free_seats integer,
+constraint slots primary key(room_id, slot_id)
+);
+insert into slots (room_id, slot_id, free_seats) values (1,1,100);
+insert into slots (room_id, slot_id, free_seats) values (1,2,100);
+insert into slots (room_id, slot_id, free_seats) values (2,1,150);
+insert into slots (room_id, slot_id, free_seats) values (2,2,150);
+insert into slots (room_id, slot_id, free_seats) values (3,1,200);
+insert into slots (room_id, slot_id, free_seats) values (3,2,200);
+insert into slots (room_id, slot_id, free_seats) values (4,1,180);
+insert into slots (room_id, slot_id, free_seats) values (4,2,180);
+insert into slots (room_id, slot_id, free_seats) values (5,1,250);
+insert into slots (room_id, slot_id, free_seats) values (5,2,250);
+
+
 create table students(
 
 student_id integer primary key auto_increment,
 first_name varchar(30),
 last_name varchar(30),
 university_number varchar(30),
-city varchar(30)
+city varchar(30),
+room_id integer,
+slot_id integer,
+constraint room_id_fk foreign key(room_id, slot_id) references slots(room_id, slot_id)
 );
-insert into students (first_name,last_name,university_number,city) values ('Andrea','Tagliabue',920647,'Milan');
-insert into students (first_name,last_name,university_number,city) values ('Morgana','Garbarini',212224,'Turin');
+insert into students (first_name,last_name,university_number,city,room_id,slot_id) values ('Andrea','Tagliabue',920647,'Milan',1,1);
+insert into students (first_name,last_name,university_number,city,room_id,slot_id) values ('Morgana','Garbarini',212224,'Turin',1,2);
 insert into students (first_name,last_name) values ('Marika','Messina');-- 920647,'Milan');
 insert into students (first_name,last_name) values ('Rosanna','Pellicano');-- 920647,'Milan');
 insert into students (first_name,last_name) values ('Simona','Fartade');-- 920647,'Milan');
@@ -37,23 +59,6 @@ city varchar(30)
  insert into rooms (capacity, location, address, city) values (250, 45.0681917369412, "via sant'Ottavio 20", 'Turin');
 
 
-create table slots(
-
-room_id integer,
-slot_id integer,
-free_seats integer,
-constraint slots primary key(room_id, slot_id)
-);
-insert into slots (room_id, slot_id, free_seats) values (1,1,100);
-insert into slots (room_id, slot_id, free_seats) values (1,2,100);
-insert into slots (room_id, slot_id, free_seats) values (2,1,150);
-insert into slots (room_id, slot_id, free_seats) values (2,2,150);
-insert into slots (room_id, slot_id, free_seats) values (3,1,200);
-insert into slots (room_id, slot_id, free_seats) values (3,2,200);
-insert into slots (room_id, slot_id, free_seats) values (4,1,180);
-insert into slots (room_id, slot_id, free_seats) values (4,2,180);
-insert into slots (room_id, slot_id, free_seats) values (5,1,250);
-insert into slots (room_id, slot_id, free_seats) values (5,2,250);
 
 
 create table organizations(
