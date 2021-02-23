@@ -29,8 +29,16 @@ slot_id integer,
 free_seats integer,
 constraint slots primary key(room_id, slot_id)
 );
-
 insert into slots (room_id, slot_id, free_seats) values (1,1,100);
+insert into slots (room_id, slot_id, free_seats) values (1,2,100);
+insert into slots (room_id, slot_id, free_seats) values (2,1,150);
+insert into slots (room_id, slot_id, free_seats) values (2,2,150);
+insert into slots (room_id, slot_id, free_seats) values (3,1,200);
+insert into slots (room_id, slot_id, free_seats) values (3,2,200);
+insert into slots (room_id, slot_id, free_seats) values (4,1,180);
+insert into slots (room_id, slot_id, free_seats) values (4,2,180);
+insert into slots (room_id, slot_id, free_seats) values (5,1,250);
+insert into slots (room_id, slot_id, free_seats) values (5,2,250);
 
 
 create table organizations(
