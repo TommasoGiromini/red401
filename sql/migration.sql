@@ -30,13 +30,14 @@ student_id integer primary key auto_increment,
 first_name varchar(30),
 last_name varchar(30),
 university_number varchar(30),
+email varchar(30),
 city varchar(30),
 room_id integer,
 slot_id integer,
 constraint room_id_fk foreign key(room_id, slot_id) references slots(room_id, slot_id)
 );
-insert into students (first_name,last_name,university_number,city,room_id,slot_id) values ('Andrea','Tagliabue',920647,'Milan',1,1);
-insert into students (first_name,last_name,university_number,city,room_id,slot_id) values ('Morgana','Garbarini',212224,'Turin',1,2);
+insert into students (first_name,last_name,university_number,email,city,room_id,slot_id) values ('Andrea','Tagliabue',920647,'920647@studenti.polimi.it','Milan',1,1);
+insert into students (first_name,last_name,university_number,email,city,room_id,slot_id) values ('Morgana','Garbarini',212224,'s212224@studenti.polito.it','Turin',1,2);
 insert into students (first_name,last_name) values ('Marika','Messina');-- 920647,'Milan');
 insert into students (first_name,last_name) values ('Rosanna','Pellicano');-- 920647,'Milan');
 insert into students (first_name,last_name) values ('Simona','Fartade');-- 920647,'Milan');
