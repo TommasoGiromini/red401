@@ -38,7 +38,6 @@ slot_id integer,
 free_seats integer,
 constraint slots primary key(room_id, slot_id)
 );
-
 insert into slots (room_id, slot_id, free_seats) values (1,1,100);
 
 
