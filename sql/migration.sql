@@ -32,13 +32,16 @@ free_seats integer,
 constraint slots primary key(room_id, slot_id)
 );
 
+
+
 create table organizations(
 
 organization_id integer,
 manager_name varchar(20),
 	manager_surname varchar(25) not null,
-	email varchar(25) unique not null,
+	email varchar(25),
 	phone_number varchar(20)
 );
+insert into organizations (manager_name,manager_surname,email,phone_number) values ('270','Payroll',null,'1700');
 
-commit
+commit;
