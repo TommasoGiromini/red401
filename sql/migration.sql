@@ -22,21 +22,6 @@ insert into students (first_name,last_name) values ('Simona','Fartade');-- 92064
 insert into students (first_name,last_name) values ('Tommaso','Geronimi');-- 920647,'Milan');
 
 
-create table rooms(
-
-room_id integer primary key auto_increment,
-capacity integer,
-location varchar(30),
-address varchar(30),
-city varchar(30)
-);
- insert into rooms (capacity, location, address, city) values (100, 45.05080786715206, 'via Michelangelo 17bis', 'Turin');
- insert into rooms (capacity, location, address, city) values (150, 45.067539249059784, 'via Verdi 26M', 'Turin');
- insert into rooms (capacity, location, address, city) values (200, 45.06417338819595, 'corso Duca Degli Abruzzi 24', 'Turin');
- insert into rooms (capacity, location, address, city) values (180, 45.073670542813645, 'lungo Dora Siena 100A', 'Turin');
- insert into rooms (capacity, location, address, city) values (250, 45.0681917369412, "via sant'Ottavio 20", 'Turin');
-
-
 create table slots(
 
 room_id integer,
@@ -61,5 +46,20 @@ insert into organizations (organization_name,manager_name,manager_surname,email,
 insert into organizations (organization_name,manager_name,manager_surname,email,phone_number) values ('UniTo','Giulia','Rossi','giulia.rossi@gmail.com','3334756908');
 insert into organizations (organization_name,manager_name,manager_surname,email,phone_number) values ('Edisu','Silvano','Negri','s.negri@gmail.com','3247658943');
 
+create table rooms(
+
+room_id integer primary key auto_increment,
+capacity integer,
+location varchar(30),
+address varchar(30),
+city varchar(30),
+organization_id integer,
+constraint rooms_fk foreign key(organization_id) references organizations(organization_id)
+);
+ insert into rooms (capacity, location, address, city, organization_id) values ('100', '45.05080786715206', 'via Michelangelo 17bis', 'Turin', '3');
+ insert into rooms (capacity, location, address, city, organization_id) values ('150', '45.067539249059784', 'via Verdi 26M', 'Turin', '3');
+ insert into rooms (capacity, location, address, city, organization_id) values ('200', '45.06417338819595', 'corso Duca Degli Abruzzi 24', 'Turin','1');
+ insert into rooms (capacity, location, address, city, organization_id) values ('180', '45.073670542813645', 'lungo Dora Siena 100A', 'Turin','2');
+ insert into rooms (capacity, location, address, city, organization_id) values ('250', '45.0681917369412', "via sant'Ottavio 20", 'Turin','2');
 
 commit;
