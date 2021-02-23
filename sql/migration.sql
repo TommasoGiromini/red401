@@ -14,6 +14,13 @@ last_name varchar(30),
 university_number varchar(30),
 city varchar(30)
 );
+insert into students (first_name,last_name,university_number,city) values ('Andrea','Tagliabue',920647,'Milan');
+insert into students (first_name,last_name,university_number,city) values ('Morgana','Garbarini',212224,'Turin');
+insert into students (first_name,last_name) values ('Marika','Messina');-- 920647,'Milan');
+insert into students (first_name,last_name) values ('Rosanna','Pellicano');-- 920647,'Milan');
+insert into students (first_name,last_name) values ('Simona','Fartade');-- 920647,'Milan');
+insert into students (first_name,last_name) values ('Tommaso','Geronimi');-- 920647,'Milan');
+
 
 create table rooms(
 
