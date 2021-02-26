@@ -38,10 +38,10 @@ constraint room_id_fk foreign key(room_id, slot_id) references slots(room_id, sl
 );
 insert into students (first_name,last_name,university_number,email,city,room_id,slot_id) values ('Andrea','Tagliabue',920647,'920647@studenti.polimi.it','Milan',1,1);
 insert into students (first_name,last_name,university_number,email,city,room_id,slot_id) values ('Morgana','Garbarini',212224,'s212224@studenti.polito.it','Turin',1,2);
-insert into students (first_name,last_name) values ('Marika','Messina');-- 920647,'Milan');
-insert into students (first_name,last_name) values ('Rosanna','Pellicano');-- 920647,'Milan');
-insert into students (first_name,last_name) values ('Simona','Fartade');-- 920647,'Milan');
-insert into students (first_name,last_name) values ('Tommaso','Geronimi');-- 920647,'Milan');
+insert into students (first_name,last_name, university_number,email,city,room_id,slot_id) values ('Marika','Messina', 232545, 's232545@studenti.unict.it', 'Turin', 1,2 );
+insert into students (first_name,last_name, university_number,email,city,room_id,slot_id) values ('Rosanna','Pellicano', 249457, 's249457@studenti.polito.it', 'Turin', 3,1);
+insert into students (first_name,last_name, university_number,email,city,room_id,slot_id) values ('Simona','Fartade', 204934, 's204934@studenti.polito.it' , 'Torino', 1,2);
+insert into students (first_name,last_name, university_number,email,city,room_id,slot_id) values ('Tommaso','Giromini', 225685, 's225685@studenti.polito.it','Turin', 1,2);
 
 create table organizations(
 
@@ -64,12 +64,13 @@ location varchar(30),
 address varchar(30),
 city varchar(30),
 organization_id integer,
+silent varchar(2),
 constraint rooms_fk foreign key(organization_id) references organizations(organization_id)
 );
- insert into rooms (capacity, location, address, city, organization_id) values ('100', '45.05080786715206', 'via Michelangelo 17bis', 'Turin', '3');
- insert into rooms (capacity, location, address, city, organization_id) values ('150', '45.067539249059784', 'via Verdi 26M', 'Turin', '3');
- insert into rooms (capacity, location, address, city, organization_id) values ('200', '45.06417338819595', 'corso Duca Degli Abruzzi 24', 'Turin','1');
- insert into rooms (capacity, location, address, city, organization_id) values ('180', '45.073670542813645', 'lungo Dora Siena 100A', 'Turin','2');
- insert into rooms (capacity, location, address, city, organization_id) values ('250', '45.0681917369412', "via sant'Ottavio 20", 'Turin','2');
+ insert into rooms (capacity, location, address, city, organization_id, silent) values ('100', '45.05080786715206', 'via Michelangelo 17bis', 'Turin', '3', 'si');
+ insert into rooms (capacity, location, address, city, organization_id, silent) values ('150', '45.067539249059784', 'via Verdi 26M', 'Turin', '3', 'si');
+ insert into rooms (capacity, location, address, city, organization_id, silent) values ('200', '45.06417338819595', 'corso Duca Degli Abruzzi 24', 'Turin','1', 'no');
+ insert into rooms (capacity, location, address, city, organization_id, silent) values ('180', '45.073670542813645', 'lungo Dora Siena 100A', 'Turin','2', 'si');
+ insert into rooms (capacity, location, address, city, organization_id, silent) values ('250', '45.0681917369412', "via sant'Ottavio 20", 'Turin','2', 'no');
 
 commit;
