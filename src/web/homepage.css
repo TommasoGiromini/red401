@@ -1,0 +1,13 @@
+body{
+    background-color: rgb(197, 236, 230);
+    border: 3px ;
+    margin:10px;
+    font-style: italic; 
+}
+h1, h2{
+    color: rgb(230, 16, 16)
+}
+title{
+    color:red
+}
+
