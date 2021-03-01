@@ -4,13 +4,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Can't login</title>
-<link rel="icon" type="image/x-icon" href="/jes/favicon.ico">
-<link rel="stylesheet" type="text/css" href="/jes/css/simple.css">
+
+<link rel="stylesheet" type="text/css" href="webapp/homepage.css">
 </head>
 <body>
     <h1>Login for "${param.user}" rejected!</h1>
     <p>
-        Back <a href="/jes/index.html">home</a>
+        Back <a href="/red/homepage.html">home</a>
     </p>
 </body>
 </html>
