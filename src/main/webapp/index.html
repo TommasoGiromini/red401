@@ -18,7 +18,9 @@
 
 
 <body>
+
 	<h1>Save A Seat</h1>
+<h4>Riservati un posto in una delle aule studio di Torino</h4>
 	<!--  div id="myCarousel" class="carousel slide" data-ride="carousel">
 
 
@@ -41,14 +43,41 @@
 			interval : 200
 		});
 	</script>-->
- <figure>
-        <img id="image" src="img/download.jpg" width="500px">
-    </figure>
-	<p>Riserva un posto in una delle aule studio di Torino tra Aula
-		Studio Opera e Castelfidardo. Inserisci le tue credenziali.</p>
-
+	<figure>
+		<img id="image" src="img/download.jpg" width="500px">
+	</figure>
+	<br>
+	<p id="spiegazione"> Sei stanco di non trovare posto per studiare? <br> Questa è l'app che fa per te!<br> Prenota un posto in una delle nostre aule studio per il mattino o per il pomeriggio <br>
+	è semplicissimo e il posto è assicurato </p>
+	
+		<h5>Sei nuovo? Iscriviti</h5>
+	<form action=" " method="get">
+		<div>
+			Nome: <input type="text" id="name" name="sender" placeholder="Nome"
+				required> Cognome: <input type="text" id="cognome"
+				name="sender" placeholder="cognome" required>
+		</div>
+		<br>
+		
+		<div>
+			Numero di matricola: <input type="text" id="numero_matricola"
+				name="sender" placeholder="numero matricola" required>
+		</div>
+		<br>
+		<div>
+			Email input: <input type="email" id="email" maxlength="30"
+				placeholder="e-mail" required>
+		</div>
+	</form>
+	<br>
 	<div>
-		<h6>If you've subscribed, please login</h6>
+		<button type="button">Iscriviti</button>
+	</div>
+	<br>
+	<br>
+	<div>
+
+		<h5>Se sei già iscritto, accedi</h5>
 		Email: <input type="email" id="username" maxlength="30"
 			placeholder="e-mail" required>
 	</div>
@@ -62,8 +91,6 @@
 		<button type="submit">Login</button>
 	</div>
 
-	<div>
-		<button type="button">Subscribe</button>
-	</div>
+	
 </body>
 </html>
