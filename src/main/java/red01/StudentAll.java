@@ -31,19 +31,11 @@ public class StudentAll extends HttpServlet {
 	// }
 
 	
-	String user = request.getParameter("user");
-	String password = request.getParameter("password");
+	// String user = request.getParameter("user");
+	// String password = request.getParameter("password");
 
-	String url;
-	
-	if(user==null||user.isBlank()||password==null||password.isBlank())
-	{
-		url = "unknown.jsp";
-	}else
-	{
-	
-		url = "pickRoom.jsp";
-	}request.getRequestDispatcher(url).forward(request,response);
+	String url = "pickRoom.jsp";
+	request.getRequestDispatcher(url).forward(request,response);
 }
 
 	@Override
