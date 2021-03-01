@@ -51,7 +51,7 @@
 	è semplicissimo e il posto è assicurato </p>
 	
 		<h5>Sei nuovo? Iscriviti</h5>
-	<form action=" " method="get">
+	<form action="login" method="post">
 		<div>
 			Nome: <input type="text" id="name" name="sender" placeholder="Nome"
 				required> Cognome: <input type="text" id="cognome"
@@ -65,7 +65,7 @@
 		</div>
 		<br>
 		<div>
-			Email input: <input type="email" id="email" maxlength="30"
+			Email input: <input type="email" id="user" maxlength="30"
 				placeholder="e-mail" required>
 		</div>
 	</form>
@@ -73,23 +73,30 @@
 	<div>
 		<button type="button">Iscriviti</button>
 	</div>
+	
 	<br>
 	<br>
+	<h5>Se sei già iscritto, accedi</h5>
+		<form action = "StudentAll" method="post">
 	<div>
 
-		<h5>Se sei già iscritto, accedi</h5>
-		Email: <input type="email" id="username" maxlength="30"
+		
+		Email: <input type="email" id="user" maxlength="30"
 			placeholder="e-mail" required>
 	</div>
 	<br>
 	<div>
-		Password: <input type="password" id="pw" maxlength="20"
+		Password: <input type="password" id="password" maxlength="20"
 			placeholder="password" required>
 	</div>
+	
 	<br>
 	<div>
 		<button type="submit">Login</button>
-	</div>
+		</div>
+		</form>
+	
+	
 
 	
 </body>

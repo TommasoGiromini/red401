@@ -7,7 +7,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "ROOMS")
-public class Rooms {
+public class Room{
 	@Id
 	@Column(name = "Room_ID")
 	private long id;
@@ -30,7 +30,7 @@ public class Rooms {
 	@Column(name = "Silent")
 	private String silent;
 
-	public Rooms() {
+	public Room () {
 
 	}
 }
