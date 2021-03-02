@@ -67,5 +67,13 @@ public class Student {
 
 	public Student() {
 	}
+
+	public Student(long id2, String name, String surname, String number, String email) {
+		
+	}
+
+	public long getId() {
+		return id;
+	}
 	
 }
