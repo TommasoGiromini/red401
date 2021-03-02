@@ -33,7 +33,7 @@ public class StudentDao {
 
         try {
             em = JpaUtil.createEntityManager();
-            String jpql = "SELECT email FROM Student where email=" + email.toString();
+            String jpql = "SELECT email FROM Student where email=" + email;
             return (String) em.createQuery(jpql).getSingleResult();
         } finally {
             if (em != null) {

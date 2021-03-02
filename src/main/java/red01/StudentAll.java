@@ -31,19 +31,18 @@ public class StudentAll extends HttpServlet {
     request.setAttribute("student", students);
     
     String url = "/pickRoom.jsp";
-    String user = request.getParameter("user");
+    request.getRequestDispatcher(url).forward(request,response);
+    
     
   
     }
-	// request.getRequestDispatcher("/student.jsp").forward(request, response);
-	// }
 
 	
-	
+	String user = request.getParameter("user");
 	// String password = request.getParameter("password");
 
 	
-	request.getRequestDispatcher(url).forward(request,response);
+	
 }
 
 	@Override

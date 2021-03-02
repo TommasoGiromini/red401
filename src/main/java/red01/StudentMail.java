@@ -21,17 +21,18 @@ public class StudentMail extends HttpServlet {
 				throws ServletException, IOException {
 			log.trace("enter");
 			String user = request.getParameter("user");
-			StudentDao s= new StudentDao();
+			StudentDao dao= new StudentDao();
 			
-			if (s.readMail(user) != null) {
+			if (dao.readMail(user) != null) {
 				String url = "/pickRoom.jsp";
-						request.getRequestDispatcher(url).forward(request, response);
+				request.getRequestDispatcher(url).forward(request, response);
 		}
 			else {
 				String url = "/unknown.jsp";
 				request.getRequestDispatcher(url).forward(request, response);
 			}
 	}
+	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
