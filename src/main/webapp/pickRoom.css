@@ -1,0 +1,19 @@
+@charset "ISO-8859-1";
+body{
+    background-color: rgb(197, 236, 230);
+    border: 3px ;
+    margin:10px;
+    text-align: center; 
+}
+h1, h2{
+    color: rgb(230, 16, 16);
+    
+}
+title{
+    color:red
+}
+#spiegazione{
+ color: rgb(230, 16, 16)
+}
+
+ 
