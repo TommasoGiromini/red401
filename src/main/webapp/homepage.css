@@ -5,11 +5,23 @@ body{
     text-align: center; 
 }
 h1, h2{
-    color: rgb(230, 16, 16)
+    color: rgb(230, 16, 16);
+    font-family: Times New Roman;
+    font-size: 20px;
 }
 title{
     color:red
 }
 #spiegazione{
  color: rgb(230, 16, 16)
+}
+ input{
+              background-color: #d0d4f5;
+              padding: 5px;
+
+          }
+          
+  p {
+    font-family: Arial;
+    font-size: 14px;
 }
