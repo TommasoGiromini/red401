@@ -2,6 +2,7 @@ package red01;
 
 import java.io.IOException;
 
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.example.jed.s12.CoderDao;
 
 @WebServlet("/student/new")
 public class StudentNew extends HttpServlet {
@@ -30,18 +30,18 @@ public class StudentNew extends HttpServlet {
 			String param = request.getParameter("id");
 	        long id = Long.parseLong(param);
 			
-			Student newst = new Student(id, name, surname, number, email);
+			Student student = new Student(id, name, surname, number, email);
 			
 			if (new StudentDao().create(student)) {
-	            log.debug("Coder persisted with id " + coder.getId());
-	            request.setAttribute("coder", coder);
+	            log.debug("Coder persisted with id " + student.getId());
+	            request.setAttribute("student", student);
 	        } else {
-	            log.info("Can't create " + coder);
+	            log.info("Can't create " + student);
 	        }
 
 	        request.getRequestDispatcher("/coder.jsp").forward(request, response);
 	    }			
-	}
+
 	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
