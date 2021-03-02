@@ -46,7 +46,7 @@ p {
 }
 </style>
 <figure>
-		<img id="image" src="img/download_1.jpg" width="300px">
+		<img id="image1" src="img/download_1.jpg" width="300px">
 	</figure>
 	<h1>Ciao ${param.user}</h1>
 	
