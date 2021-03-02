@@ -21,11 +21,11 @@
 
 	<p>Oppure scegli da qui:</p>
 	<select name="room">
-		<option value="/red/room/get?id=1"></option>
-		<option value="/red/room/get?id=2"></option>
-		<option value="/red/room/get?id=3"></option>
-		<option value="/red/room/get?id=4"></option>
-		<option value="/red/room/get?id=5"></option>
+		<option value="/red/Room/get?id=1"></option>
+		<option value="/red/Room/get?id=2"></option>
+		<option value="/red/Room/get?id=3"></option>
+		<option value="/red/Room/get?id=4"></option>
+		<option value="/red/Room/get?id=5"></option>
 		</select>
 		<button type="submit"> Conferma </button>
 		<p>
