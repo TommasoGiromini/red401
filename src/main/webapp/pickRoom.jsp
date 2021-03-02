@@ -7,20 +7,22 @@
 <head>
 <meta charset="UTF-8">
 <title>Logged</title>
-<link rel="icon" type="image/x-icon" href="/jes/favicon.ico">
-<link rel="stylesheet" type="text/css" href="/jes/css/simple.css">
+<link rel="stylesheet" type="text/css" href="/pickRoom.css">
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 </head>
 <body>
-	<h1>Hi ${param.user}</h1>
+	<h1>Ciao ${param.user}</h1>
 
-	<a href="/red/pickRoom.html">Scegli aula studio più vicina a te </a> 
+	<a href="/red/pickRoom.html">Scegli aula studio più vicina a te </a>
 	<br>
-	
-	<a href = "/red/pickRoomList.html">Oppure scegli dall'elenco</a>
-	
 	<br>
-			
-			Back <a href="/red/index.html">home</a>
-	
+
+	<a href="/red/pickRoomList.html">Oppure scegli dall'elenco</a>
+	<br>
+	<br> Back
+	<a href="/red/index.html">home</a>
+
 </body>
 </html>
