@@ -28,6 +28,20 @@ public class StudentDao {
         }
     }
 
+    public String readMail(String email) {
+    	EntityManager em = null;
+
+        try {
+            em = JpaUtil.createEntityManager();
+            String jpql = "SELECT email FROM Student where email=" + email.toString();
+            return (String) em.createQuery(jpql).getSingleResult();
+        } finally {
+            if (em != null) {
+                em.close();
+            }
+        }
+    }
+    
     public Optional<Student> read(int id) {
         EntityManager em = null;
 

@@ -13,14 +13,15 @@
 <body>
 	<h1>Hi ${param.user}</h1>
 
-	<a href="/red/pickRoom.html">Scegli aula studio più vicina a te </a> 
+	<a href="/red/pickRoom.html">Scegli aula studio più vicina a te </a>
 	<br>
-	
-	<a href = "/red/pickRoomList.html">Oppure scegli dall'elenco</a>
-	
+
+	<p>Oppure</p>
 	<br>
-			
-			Back <a href="/red/index.html">home</a>
-	
+	<a href="/red/pickRoomList.html">Scegli dall'elenco</a>
+
+	<br> Back
+	<a href="/red/index.html">home</a>
+
 </body>
 </html>
