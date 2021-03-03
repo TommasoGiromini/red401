@@ -31,17 +31,17 @@ first_name varchar(30),
 last_name varchar(30),
 university_number varchar(30),
 email varchar(30),
-city varchar(30),
+password varchar(8),
 room_id integer,
 slot_id integer,
 constraint room_id_fk foreign key(room_id, slot_id) references slots(room_id, slot_id)
 );
-insert into students (first_name,last_name,university_number,email,city,room_id,slot_id) values ('Andrea','Tagliabue',920647,'920647@studenti.polimi.it','Milan',1,1);
-insert into students (first_name,last_name,university_number,email,city,room_id,slot_id) values ('Morgana','Garbarini',212224,'s212224@studenti.polito.it','Turin',1,2);
-insert into students (first_name,last_name, university_number,email,city,room_id,slot_id) values ('Marika','Messina', 232545, 's232545@studenti.unict.it', 'Turin', 1,2 );
-insert into students (first_name,last_name, university_number,email,city,room_id,slot_id) values ('Rosanna','Pellicano', 249457, 's249457@studenti.polito.it', 'Turin', 3,1);
-insert into students (first_name,last_name, university_number,email,city,room_id,slot_id) values ('Simona','Fartade', 204934, 's204934@studenti.polito.it' , 'Torino', 1,2);
-insert into students (first_name,last_name, university_number,email,city,room_id,slot_id) values ('Tommaso','Giromini', 225685, 's225685@studenti.polito.it','Turin', 1,2);
+insert into students (first_name,last_name,university_number,email,password,room_id,slot_id) values ('Andrea','Tagliabue',920647,'920647@studenti.polimi.it','password',1,1);
+insert into students (first_name,last_name,university_number,email,password,room_id,slot_id) values ('Morgana','Garbarini',212224,'s212224@studenti.polito.it','password',1,2);
+insert into students (first_name,last_name, university_number,email,password,room_id,slot_id) values ('Marika','Messina', 232545, 's232545@studenti.unict.it','password', 1,2 );
+insert into students (first_name,last_name, university_number,email,password,room_id,slot_id) values ('Rosanna','Pellicano', 249457, 's249457@studenti.polito.it','password', 3,1);
+insert into students (first_name,last_name, university_number,email,password,room_id,slot_id) values ('Simona','Fartade', 204934, 's204934@studenti.polito.it','password', 1,2);
+insert into students (first_name,last_name, university_number,email,password,room_id,slot_id) values ('Tommaso','Giromini', 225685, 's225685@studenti.polito.it', 'password',1,2);
 
 create table organizations(
 
