@@ -59,6 +59,7 @@ insert into organizations (organization_name,manager_name,manager_surname,email,
 create table rooms(
 
 room_id integer primary key auto_increment,
+name varchar(30),
 capacity integer,
 location varchar(30),
 address varchar(30),
@@ -67,10 +68,10 @@ organization_id integer,
 silent varchar(2),
 constraint rooms_fk foreign key(organization_id) references organizations(organization_id)
 );
- insert into rooms (capacity, location, address, city, organization_id, silent) values ('100', '45.05080786715206', 'via Michelangelo 17bis', 'Turin', '3', 'si');
- insert into rooms (capacity, location, address, city, organization_id, silent) values ('150', '45.067539249059784', 'via Verdi 26M', 'Turin', '3', 'si');
- insert into rooms (capacity, location, address, city, organization_id, silent) values ('200', '45.06417338819595', 'corso Duca Degli Abruzzi 24', 'Turin','1', 'no');
- insert into rooms (capacity, location, address, city, organization_id, silent) values ('180', '45.073670542813645', 'lungo Dora Siena 100A', 'Turin','2', 'si');
- insert into rooms (capacity, location, address, city, organization_id, silent) values ('250', '45.0681917369412', "via sant'Ottavio 20", 'Turin','2', 'no');
+ insert into rooms (name, capacity, location, address, city, organization_id, silent) values ('Aula Studio Opera','100', '45.05080786715206', 'via Michelangelo 17bis', 'Turin', '3', 'si');
+ insert into rooms (name, capacity, location, address, city, organization_id, silent) values ('Verdi','150', '45.067539249059784', 'via Verdi 26M', 'Turin', '3', 'si');
+ insert into rooms (name, capacity, location, address, city, organization_id, silent) values ('Politecnico', '200', '45.06417338819595', 'corso Duca Degli Abruzzi 24', 'Turin','1', 'no');
+ insert into rooms (name, capacity, location, address, city, organization_id, silent) values ('Campus Einaudi', '180', '45.073670542813645', 'lungo Dora Siena 100A', 'Turin','2', 'si');
+ insert into rooms (name, capacity, location, address, city, organization_id, silent) values ('Palazzo nuovo','250', '45.0681917369412', "via sant'Ottavio 20", 'Turin','2', 'no');
 
 commit;
