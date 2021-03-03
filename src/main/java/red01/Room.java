@@ -11,7 +11,10 @@ public class Room{
 	@Id
 	@Column(name = "Room_ID")
 	private long id;
-
+	
+	@Column(name = "Name")
+	private String name;
+	
 	@Column(name = "Capacity")
 	private int capacity;
 
@@ -88,5 +91,12 @@ public class Room{
 
 	public void setSilent(String silent) {
 		this.silent = silent;
+	}
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 }

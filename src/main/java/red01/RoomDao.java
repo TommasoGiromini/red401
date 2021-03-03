@@ -1,7 +1,7 @@
 package red01;
 
 import java.util.List;
-import java.util.Optional;
+
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
@@ -28,17 +28,20 @@ public class RoomDao {
         }
     }
 
-    public Optional<Room> read(int id) {
-        EntityManager em = null;
-
-        try {
-            em = JpaUtil.createEntityManager();
-            return Optional.ofNullable(em.find(Room.class, id));
-        } finally {
-            if (em != null) {
-                em.close();
-            }
-        }
+    public Room readID(Integer id) {
+		EntityManager em = null;
+		try {
+			em = JpaUtil.createEntityManager();
+			
+			String jpql = "select Name FROM Room where Room_ID='" + id + "'";
+			return (Room) em.createQuery(jpql).getSingleResult();
+		} catch (Exception e) {
+			return null;
+		} finally {
+			if (em != null) {
+				em.close();
+			}
+		}
     }
 
     public boolean create(Room room) {
