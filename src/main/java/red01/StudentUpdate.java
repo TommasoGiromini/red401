@@ -36,7 +36,7 @@ package red01;
 	            log.info("Can't merge " + student);
 	        }
 
-	        request.getRequestDispatcher("/").forward(request, response);
+	        request.getRequestDispatcher("/succeded.jsp").forward(request, response);
 	    }
 
 	    @Override
