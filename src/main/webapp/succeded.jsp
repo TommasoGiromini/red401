@@ -44,7 +44,8 @@ p {
 
 	
 		<img id="image1" src="img/download_1.jpg" width="300px">
-	<h1>Ciao ${param.name}, ti sei prenotato con successo! </h1>
+	<h1>Ciao ${param.name}, ti sei prenotato con successo! <br>
+	Buono Studio!</h1>
 
 
 
