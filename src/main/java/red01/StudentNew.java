@@ -39,7 +39,7 @@ public class StudentNew extends HttpServlet {
 	            log.info("Can't create " + student);
 	        }
 
-	        request.getRequestDispatcher("/coder.jsp").forward(request, response);
+	        request.getRequestDispatcher("/newstpickRoom.jsp").forward(request, response);
 	    }			
 
 	
