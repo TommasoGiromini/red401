@@ -2,6 +2,8 @@ package red01;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -9,6 +11,7 @@ import javax.persistence.Table;
 @Table(name = "STUDENTS")
 public class Student {
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "student_ID")
 	private long id;
 
@@ -19,7 +22,7 @@ public class Student {
 	private String lastName;
 
 	@Column(name = "University_number")
-	private String university_number;
+	private String number;
 
 	@Column(name = "email")
 	private String email;
@@ -27,12 +30,18 @@ public class Student {
 	@Column(name = "password")
 	private String password;
 
-	public String getUniversity_number() {
-		return university_number;
+	@Column(name = "room_ID")
+	private Integer roomId;
+
+	@Column(name = "slot_ID")
+	private Integer slotId;
+	
+	public String getNumber() {
+		return number;
 	}
 
-	public void setUniversity_number(String university_number) {
-		this.university_number = university_number;
+	public void setNumber(String number) {
+		this.number = number;
 	}
 
 	public String getEmail() {
@@ -43,32 +52,32 @@ public class Student {
 		this.email = email;
 	}
 
-	public int getRoomId() {
+
+	public Integer getRoomId() {
 		return roomId;
 	}
 
-	public void setRoomId(int roomId) {
+	public void setRoomId(Integer roomId) {
 		this.roomId = roomId;
 	}
 
-	public int getSlotId() {
+	public Integer getSlotId() {
 		return slotId;
 	}
 
-	public void setSlotId(int slotId) {
+	public void setSlotId(Integer slotId) {
 		this.slotId = slotId;
 	}
-
-	@Column(name = "room_ID")
-	private int roomId;
-
-	@Column(name = "slot_ID")
-	private int slotId;
 
 	public Student() {
 	}
 
-	public Student(long id2, String name, String surname, String number, String email, String password) {
+	public Student(String firstName, String lastName, String number, String email, String password) {
+		this.firstName=firstName;
+		this.lastName=lastName;
+		this.number=number;
+		this.email=email;
+		this.password=password;
 		
 	}
 

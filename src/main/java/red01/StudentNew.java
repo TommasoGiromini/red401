@@ -25,22 +25,20 @@ public class StudentNew extends HttpServlet {
 			String name = request.getParameter("first_name");
 			String surname = request.getParameter("last_name");
 			String number = request.getParameter("number");
-			String email= request.getParameter("mail");
+			String email= request.getParameter("email");
 			String password= request.getParameter("pw");
 			
-			String param = request.getParameter("id");
-	        long id = Long.parseLong(param);
 			
-			Student student = new Student(id, name, surname, number, email, password);
+			Student student = new Student(name, surname, number, email, password);
 			
-			if (new StudentDao().create(student)) {
+			if (new NewStudentDao().create(student)) {
 	            log.debug("Student persisted with id " + student.getId());
 	            request.setAttribute("student", student);
 	        } else {
 	            log.info("Can't create " + student);
 	        }
 
-	        request.getRequestDispatcher("/newstpickRoom.jsp").forward(request, response);
+	        request.getRequestDispatcher("/newstPickRoom.jsp").forward(request, response);
 	    }			
 
 	
