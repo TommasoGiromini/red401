@@ -24,8 +24,8 @@ public class Student {
 	@Column(name = "email")
 	private String email;
 
-	@Column(name = "city")
-	private String city;
+	@Column(name = "password")
+	private String password;
 
 	public String getUniversity_number() {
 		return university_number;
@@ -68,7 +68,7 @@ public class Student {
 	public Student() {
 	}
 
-	public Student(long id2, String name, String surname, String number, String email) {
+	public Student(long id2, String name, String surname, String number, String email, String password) {
 		
 	}
 

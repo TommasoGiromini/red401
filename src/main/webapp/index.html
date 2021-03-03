@@ -56,21 +56,23 @@
 	<h4>Sei nuovo? Iscriviti</h4>
 	<form action="student/new" method="post">
 		<div>
-			Nome: <input type="text" id="name" name="sender" placeholder="Nome"
+			Nome: <input type="text" id="name" name="first_name" placeholder="Nome"
 				required> Cognome: <input type="text" id="cognome"
-				name="sender" placeholder="cognome" required>
+				name="last_name" placeholder="cognome" required>
 		</div>
 		<br>
 
 		<div>
 			Numero di matricola: <input type="text" id="numero_matricola"
-				name="sender" placeholder="numero matricola" required>
+				name="number" placeholder="numero matricola" required>
 		</div>
 		<br>
 		<div>
-			Email istituzionale: <input type="email" id="user" maxlength="30"
+			Email istituzionale: <input type="email" id="user" name="mail" maxlength="30"
 				placeholder="e-mail" required>
 		</div>
+		<div>Password: <input type="password" id="pw" name="pw" maxlength="8"
+				placeholder="password" required></div>
 	</form>
 	<br>
 	<div>

@@ -24,16 +24,17 @@ public class StudentNew extends HttpServlet {
 			log.trace("enter");
 			String name = request.getParameter("first_name");
 			String surname = request.getParameter("last_name");
-			String number = request.getParameter("university_number");
-			String email= request.getParameter("email");
+			String number = request.getParameter("number");
+			String email= request.getParameter("mail");
+			String password= request.getParameter("pw");
 			
 			String param = request.getParameter("id");
 	        long id = Long.parseLong(param);
 			
-			Student student = new Student(id, name, surname, number, email);
+			Student student = new Student(id, name, surname, number, email, password);
 			
 			if (new StudentDao().create(student)) {
-	            log.debug("Coder persisted with id " + student.getId());
+	            log.debug("Student persisted with id " + student.getId());
 	            request.setAttribute("student", student);
 	        } else {
 	            log.info("Can't create " + student);
