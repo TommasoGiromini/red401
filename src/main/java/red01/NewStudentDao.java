@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 
 public class NewStudentDao {
 	static private final Logger log = LoggerFactory.getLogger(NewStudentDao.class);
+
 	public boolean create(Student student) {
 		log.trace("enter");
 		EntityManager em = null;
@@ -30,6 +31,35 @@ public class NewStudentDao {
 				log.warn("Can't rollback transaction", e);
 			}
 
+			return false;
+		} finally {
+			if (em != null) {
+				em.close();
+			}
+		}
+
+	}
+
+	public boolean update(Student student) {
+		EntityManager em = null;
+		EntityTransaction tx = null;
+
+		try {
+			em = JpaUtil.createEntityManager();
+			tx = em.getTransaction();
+			tx.begin();
+			em.merge(student);
+			tx.commit();
+			return true;
+		} catch (Exception ex) {
+			try {
+				if (tx != null && tx.isActive()) {
+					tx.rollback();
+				}
+			} catch (Exception e) {
+				log.error("Can't rollback transaction", e);
+			}
+			log.error("Can't merge entity", ex);
 			return false;
 		} finally {
 			if (em != null) {

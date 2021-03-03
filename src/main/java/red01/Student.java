@@ -81,6 +81,11 @@ public class Student {
 		
 	}
 
+	public Student(Integer slotId, Integer roomId) {
+		this.slotId = slotId;
+		this.roomId = roomId;
+	}
+
 	public long getId() {
 		return id;
 	}
