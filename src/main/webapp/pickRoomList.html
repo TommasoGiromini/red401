@@ -1,4 +1,4 @@
-  
+
 <! DOCTYPE html>
 <html>
 <head>
@@ -11,26 +11,25 @@
 
 <body>
 
-<form action="student/update" method = "post">
-<select name="roomid">
-		<option value="room/all/get?id=1">Aula studio opera</option>
-		<option value="room/all/get?id=2">Via Verdi</option>
-		<option value="room/all/get?id=3">Politecnico</option>
-		<option value="room/all/get?id=4">Campus Einaudi</option>
-		<option value="room/all/get?id=5">Palazzo Nuovo</option>
-		</select>
-		<div>
+	<form action="student/update" method="post">
+		<select name="roomid">
+			<option value="1">Aula studio opera</option>
+			<option value="2">Via Verdi</option>
+			<option value="3">Politecnico</option>
+			<option value="4">Campus Einaudi</option>
+			<option value="5">Palazzo Nuovo</option>
+		</select> <br>
+		<p>Slot:</p>
+		<input type="radio" id="slot1" name="slotid" value="1"> <label
+			for="slot1">Mattino</label> <input type="radio" id="slot2"
+			name="slotid" value="2"> <label for="slot2">Pomeriggio</label> <br>
 		<br>
-                <p>Slot:</p>
-                <input type="radio" id="slot1" name="slotid">
-                <label for="slot1">Mattino</label>
-                <input type="radio" id="slot2" name="slotid">
-				<label for="slot2">Pomeriggio</label>
-		</div><br>
-		<button type="submit"> Conferma </button>
+		<button type="submit">Conferma</button>
 
-</form>
-<br>
-<br> <br> Back
+	</form>
+	<br>
+	<br>
+	<br> Back
 	<a href="/red/index.html">home</a>
-</body> </html>
+</body>
+</html>
