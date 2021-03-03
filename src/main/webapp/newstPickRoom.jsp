@@ -44,7 +44,7 @@ p {
 
 	
 		<img id="image1" src="img/download_1.jpg" width="300px">
-	<h1>Ciao ${param.mail}, benvenuto!</h1>
+	<h1>Ciao ${param.email}, benvenuto!</h1>
 
 
 	<a href="/red/pickRoom.html">Scegli aula studio più vicina a te </a>
