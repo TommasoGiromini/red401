@@ -24,24 +24,33 @@ public class StudentUpdate extends HttpServlet {
 		Integer roomid = Integer.parseInt(request.getParameter("roomid"));
 		Integer slotid = Integer.parseInt(request.getParameter("slotid"));
 
-		Student student = new Student(slotid, roomid);
+		Student student = (Student) request.getSession().getAttribute("logged");
+		if (student != null) {
+			student.setSlotId(slotid);
+			student.setRoomId(roomid);
+			if (new NewStudentDao().update(student)) {
+				log.debug("Student merged with id " + student.getId());
+				request.setAttribute("student", student);
+			} else {
+				log.info("Can't merge " + student);
+			}
 
-		if (new NewStudentDao().update(student)) {
-			log.debug("Student merged with id " + student.getId());
-			request.setAttribute("student", student);
 		} else {
-			log.info("Can't merge " + student);
+			String url = "/unknown.jsp";
+			request.getRequestDispatcher(url).forward(request, response);
+			return;
 		}
-		//RoomDao dao = new RoomDao();
 
-		//if (dao.readID(roomid) != null) {
-			Room room = new Room();			
-			String name = room.getName();
-			request.setAttribute("name", name);
-		//} else {
-		//	String url = "/unknown.jsp";
-		//	request.getRequestDispatcher(url).forward(request, response);
-		//}
+		// RoomDao dao = new RoomDao();
+
+		// if (dao.readID(roomid) != null) {
+		Room room = new Room();
+		String name = room.getName();
+		request.setAttribute("name", name);
+		// } else {
+		// String url = "/unknown.jsp";
+		// request.getRequestDispatcher(url).forward(request, response);
+		// }
 
 		request.getRequestDispatcher("/succeded.jsp").forward(request, response);
 	}
