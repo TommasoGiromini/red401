@@ -28,12 +28,12 @@ public class RoomDao {
         }
     }
 
-    public Room readID(Integer id) {
+    public Room read(Integer id) {
 		EntityManager em = null;
 		try {
 			em = JpaUtil.createEntityManager();
 			
-			String jpql = "select Name FROM Room where Room_ID='" + id + "'";
+			String jpql = "FROM Room where Room_ID='" + id + "'";
 			return (Room) em.createQuery(jpql).getSingleResult();
 		} catch (Exception e) {
 			return null;

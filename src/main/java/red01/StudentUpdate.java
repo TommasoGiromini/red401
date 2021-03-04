@@ -41,12 +41,33 @@ public class StudentUpdate extends HttpServlet {
 			return;
 		}
 
-		// RoomDao dao = new RoomDao();
-
-		// if (dao.readID(roomid) != null) {
-		Room room = new Room();
-		String name = room.getName();
-		request.setAttribute("name", name);
+		//RoomDao dao = new RoomDao();
+		//Room room = dao.read(roomid);
+		//String name = room.getName();
+		switch(roomid) {
+		case 1:
+			request.setAttribute("name", "Opera");
+		break;
+		case 2:
+			request.setAttribute("name", "Verdi");
+		break;
+		case 3:
+			request.setAttribute("name", "Politecnico");
+			break;
+		case 4:
+			request.setAttribute("name", "Campus Einaudi");
+			break;
+		default:
+			request.setAttribute("name", "Palazzo nuovo");
+		}
+		
+		switch(slotid) {
+		case 1:
+			request.setAttribute("ora", "mattina");
+		break;
+		default:
+			request.setAttribute("ora", "pomeriggio");
+		}
 		// } else {
 		// String url = "/unknown.jsp";
 		// request.getRequestDispatcher(url).forward(request, response);
