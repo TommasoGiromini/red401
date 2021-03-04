@@ -4,49 +4,55 @@
 <head>
 <meta charset="UTF-8">
 <title>List</title>
-<!--link rel="icon" type="image/x-icon" href="homepage.css"-->
-
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="homepage.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
 </head>
 
 <body>
-<div class="titolo">
-	<h1>Save A Seat</h1>
-	<h4>Riservati un posto in una delle aule studio di Torino</h4>
+	<div class="titolo">
+		<h1>Save A Seat</h1>
+		<p>Riservati un posto in una delle aule studio di Torino</p>
 	</div>
-	
-	<section class= Pick2> 
-	
-	<figure>
-	
-		<img id="image" src="/red/img/download.jpg" height="200px" width="300px" >
-		<img id="image2" src ="/red/img/download_1.jpg" height ="200px" width="300px">
-		<img id="image3" src = "/red/img/aula-studio-opera.jpg" height ="200px" width="300px">
-	</figure>
+	<br>
+
+	<section class=Pick2>
+
+		<figure>
+
+			<img id="image" src="/red/img/download.jpg" height="200px"
+				width="500px">
+			<img id="image2" src="/red/img/download_1.jpg" height="200px"
+				width="350px">
+			<img id="image3" src="/red/img/aula-studio-opera.jpg" height="200px"
+				width="350px">
+		</figure>
 	</section>
+<br>
+	<section class="Pick">
+		<form action="student/update" method="post">
+			<select name="roomid">
+				<option value="1">Aula studio opera</option>
+				<option value="2">Via Verdi</option>
+				<option value="3">Politecnico</option>
+				<option value="4">Campus Einaudi</option>
+				<option value="5">Palazzo Nuovo</option>
+			</select> <br>
+			<br>
+			<p>Slot:</p>
+			<input type="radio" id="slot1" name="slotid" value="1"> <label
+				for="slot1">Mattino</label> <input type="radio" id="slot2"
+				name="slotid" value="2"> <label for="slot2">Pomeriggio</label>
+			<br> <br>
+			<button type="submit">Conferma</button>
 
-	<section class ="Pick">
-	<form action="student/update" method="post">
-		<select name="roomid">
-			<option value="1">Aula studio opera</option>
-			<option value="2">Via Verdi</option>
-			<option value="3">Politecnico</option>
-			<option value="4">Campus Einaudi</option>
-			<option value="5">Palazzo Nuovo</option>
-		</select> <br>
-		<p>Slot:</p>
-		<input type="radio" id="slot1" name="slotid" value="1"> <label
-			for="slot1">Mattino</label> <input type="radio" id="slot2"
-			name="slotid" value="2"> <label for="slot2">Pomeriggio</label> <br>
-		<br>
-		<button type="submit">Conferma</button>
-
-	</form>
+		</form>
 	</section>
 	<br>
 	<br id="home">
-	<br> Back
-	<a href="/red/index.html">home</a>
+	<br>
+	<p>
+		Back <a href="/red/index.html">home</a>
+	</p>
 </body>
 </html>
