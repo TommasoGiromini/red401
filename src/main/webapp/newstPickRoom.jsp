@@ -54,7 +54,7 @@ h4, a{
 	<h4>Riservati un posto in una delle aule studio di Torino</h4>
 	</div>
 	
-		<img id="image1" src="img/download_1.jpg" width="300px">
+		<img id="image1" src="/red/img/download_1.jpg" width="300px">
 	<h1>Ciao ${param.email}, benvenuto!</h1>
 
 <br>
