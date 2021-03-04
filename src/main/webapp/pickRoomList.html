@@ -7,10 +7,20 @@
 <!--link rel="icon" type="image/x-icon" href="homepage.css"-->
 
 <link rel="stylesheet" type="text/css" href="homepage.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
 </head>
 
 <body>
-<img id="image1" src="/red/img/aula-studio-opera.jpg" width="300px">
+<div class="titolo">
+	<h1>Save A Seat</h1>
+	<h4>Riservati un posto in una delle aule studio di Torino</h4>
+	</div>
+	<figure>
+		<img id="image" src="img/download.jpg" height="200px" width="350px" >
+		<img id="image2" src ="img/download_1.jpg" height ="200px" width="350px">
+		<img id="image3" src = "img/aula-studio-opera.jpg" height ="200px" width="350px">
+	</figure>
+	<section class ="Pick">
 	<form action="student/update" method="post">
 		<select name="roomid">
 			<option value="1">Aula studio opera</option>
@@ -27,8 +37,9 @@
 		<button type="submit">Conferma</button>
 
 	</form>
+	</section>
 	<br>
-	<br>
+	<br id="home">
 	<br> Back
 	<a href="/red/index.html">home</a>
 </body>
