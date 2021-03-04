@@ -26,7 +26,7 @@ public class StudentNew extends HttpServlet {
 			String surname = request.getParameter("last_name");
 			String number = request.getParameter("number");
 			String email= request.getParameter("email");
-			String password= request.getParameter("pw");
+			String password= request.getParameter("password");
 			
 			
 			Student student = new Student(name, surname, number, email, password);

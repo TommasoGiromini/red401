@@ -41,16 +41,16 @@ public class StudentUpdate extends HttpServlet {
 			return;
 		}
 
-		//RoomDao dao = new RoomDao();
-		//Room room = dao.read(roomid);
-		//String name = room.getName();
-		switch(roomid) {
+		// RoomDao dao = new RoomDao();
+		// Room room = dao.read(roomid);
+		// String name = room.getName();
+		switch (roomid) {
 		case 1:
 			request.setAttribute("name", "Opera");
-		break;
+			break;
 		case 2:
 			request.setAttribute("name", "Verdi");
-		break;
+			break;
 		case 3:
 			request.setAttribute("name", "Politecnico");
 			break;
@@ -60,11 +60,11 @@ public class StudentUpdate extends HttpServlet {
 		default:
 			request.setAttribute("name", "Palazzo nuovo");
 		}
-		
-		switch(slotid) {
+
+		switch (slotid) {
 		case 1:
 			request.setAttribute("ora", "mattina");
-		break;
+			break;
 		default:
 			request.setAttribute("ora", "pomeriggio");
 		}
@@ -72,8 +72,17 @@ public class StudentUpdate extends HttpServlet {
 		// String url = "/unknown.jsp";
 		// request.getRequestDispatcher(url).forward(request, response);
 		// }
+		Slot seats = (Slot) request.getSession().getAttribute("selection");		
+		if (seats.getSeats(roomid, slotid) > 0) {
+			int freeseats = (int) seats.getSeats(roomid, slotid) - 1;
+			seats.setSeats(freeseats);
+			request.getRequestDispatcher("/succeded.jsp").forward(request, response);
+		}
+		else {
+			
+		request.getRequestDispatcher("/noFreeSeats.jsp").forward(request, response);
+		}
 
-		request.getRequestDispatcher("/succeded.jsp").forward(request, response);
 	}
 
 	@Override
