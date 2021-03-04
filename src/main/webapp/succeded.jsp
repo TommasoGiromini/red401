@@ -43,7 +43,7 @@ p {
 <body>
 
 	
-		<img id="image1" src="img/download_1.jpg" width="300px">
+		<img id="image1" src="/red/img/download_1.jpg" width="300px">
 	<h1>Ciao, ti sei prenotato con successo all'aula studio ${param.name} per lo slot ${param.slotid} <br>
 	Buono Studio!</h1>
 
