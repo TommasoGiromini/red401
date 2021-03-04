@@ -6,20 +6,19 @@
 <!--link rel="icon" type="image/x-icon" href="homepage.css"-->
 <link rel="stylesheet" type="text/css" href="homepage.css">
 
-
-
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script
 	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
 
 </head>
 
 
 <body>
-
+    <div class="titolo">
 	<h1>Save A Seat</h1>
 	<h4>Riservati un posto in una delle aule studio di Torino</h4>
+	</div>
 	<!--  div id="myCarousel" class="carousel slide" data-ride="carousel">
 
 
@@ -43,7 +42,9 @@
 		});
 	</script>-->
 	<figure>
-		<img id="image" src="img/download.jpg" width="500px">
+		<img id="image" src="img/download.jpg" height="200px" width="350px" >
+		<img id="image2" src ="img/download_1.jpg" height ="200px" width="350px">
+		<img id="image3" src = "img/aula-studio-opera.jpg" height ="200px" width="350px">
 	</figure>
 	<br>
 	<p id="spiegazione">
@@ -52,8 +53,10 @@
 		studio per il mattino o per il pomeriggio <br> è semplicissimo e
 		il posto è assicurato
 	</p>
-
+	<figure>
+<section class ="section1">
 	<h4>Sei nuovo? Iscriviti</h4>
+	
 	<form action="student/new" method="post">
 		<div>
 			Nome: <input type="text" id="name" name="first_name"
@@ -77,17 +80,17 @@
 			Password: <input type="password" id="pw" name="pw" maxlength="8"
 				placeholder="password" required>
 		</div>
+		
 		<br>
 		
 		<div>
 			<button type="submit">Iscriviti</button>
 		</div>
 	</form>
-	<br>
-
-
-	<br>
-	<br>
+	</section>
+	
+	
+	<section class ="section1">
 	<h4>Se sei già iscritto, accedi</h4>
 	<form action="student/mail" method="post">
 		<div>
@@ -107,8 +110,8 @@
 			<button type="submit">Login</button>
 		</div>
 	</form>
-
-
+</section>
+</figure>
 
 
 </body>
