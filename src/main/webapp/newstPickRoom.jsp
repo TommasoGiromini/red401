@@ -46,15 +46,9 @@ p {
 		<img id="image1" src="img/download_1.jpg" width="300px">
 	<h1>Ciao ${param.email}, benvenuto!</h1>
 
-
-	<a href="/red/pickRoom.html">Scegli aula studio più vicina a te </a>
-	<br>
-	<br>
-
-	<a href="/red/pickRoomList.html">Oppure scegli dall'elenco</a>
-	<br>
-	<br> Back
-	<a href="/red/index.html">home</a>
+<br>
+	
+	<p> Ora fai il <a href="/red/index.html"> login</a> </p>
 
 </body>
 </html>

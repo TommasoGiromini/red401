@@ -31,7 +31,7 @@ public class StudentDao {
 
 		try {
 			em = JpaUtil.createEntityManager();
-			String jpql = "FROM Student where email='" + email + "'and password =' " + password + "'";
+			String jpql = "FROM Student where email='" + email + "'  and password='" + password + "'";
 			return (Student) em.createQuery(jpql).getSingleResult();
 		} catch (Exception e) {
 			return null;

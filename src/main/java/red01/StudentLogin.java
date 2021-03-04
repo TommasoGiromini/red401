@@ -23,7 +23,7 @@ public class StudentLogin extends HttpServlet {
 		String user = request.getParameter("user");
 		String password = request.getParameter("password");
 		StudentDao dao = new StudentDao();
-		Student student = dao.read(user, password);
+		Student student = dao.read(user,password);
 		if (student != null) {
 			request.getSession().setAttribute("logged", student);
 			String url = "/pickRoom.jsp";
