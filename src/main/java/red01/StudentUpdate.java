@@ -24,60 +24,63 @@ public class StudentUpdate extends HttpServlet {
 		Integer roomid = Integer.parseInt(request.getParameter("roomid"));
 		Integer slotid = Integer.parseInt(request.getParameter("slotid"));
 
-		Student student = (Student) request.getSession().getAttribute("logged");
-		if (student != null) {
-			student.setSlotId(slotid);
-			student.setRoomId(roomid);
-			if (new NewStudentDao().update(student)) {
-				log.debug("Student merged with id " + student.getId());
-				request.setAttribute("student", student);
-			} else {
-				log.info("Can't merge " + student);
-			}
+		Slot slot = new Slot();
+		slot.setId(roomid);
+		slot.setSid(slotid);
+		int seats = slot.getSeats(roomid, slotid);
 
-		} else {
-			String url = "/unknown.jsp";
-			request.getRequestDispatcher(url).forward(request, response);
-			return;
-		}
-
-		// RoomDao dao = new RoomDao();
-		// Room room = dao.read(roomid);
-		// String name = room.getName();
-		switch (roomid) {
-		case 1:
-			request.setAttribute("name", "Opera");
-			break;
-		case 2:
-			request.setAttribute("name", "Verdi");
-			break;
-		case 3:
-			request.setAttribute("name", "Politecnico");
-			break;
-		case 4:
-			request.setAttribute("name", "Campus Einaudi");
-			break;
-		default:
-			request.setAttribute("name", "Palazzo nuovo");
-		}
-
-		switch (slotid) {
-		case 1:
-			request.setAttribute("ora", "mattina");
-			break;
-		default:
-			request.setAttribute("ora", "pomeriggio");
-		}
-
-		Slot seats = (Slot) request.getSession().getAttribute("selection");
-
-		if (seats.getSeats(roomid, slotid) > 0) {
-			int freeseats = (int) seats.getSeats(roomid, slotid) - 1;
-			seats.setSeats(freeseats);
-			if (new SlotDao().update(seats)) {
+		if (seats > 0) {
+			int freeseats = seats - 1;
+			slot.setSeats(freeseats);
+			if (new SlotDao().update(slot)) {
 				request.setAttribute("seats", seats);
 			} else {
 				log.info("Can't merge " + seats);
+			}
+
+			Student student = (Student) request.getSession().getAttribute("logged");
+			if (student != null) {
+				student.setSlotId(slotid);
+				student.setRoomId(roomid);
+				if (new NewStudentDao().update(student)) {
+					log.debug("Student merged with id " + student.getId());
+					request.setAttribute("student", student);
+				} else {
+					log.info("Can't merge " + student);
+				}
+
+			} else {
+				String url = "/unknown.jsp";
+				request.getRequestDispatcher(url).forward(request, response);
+				return;
+			}
+
+			// RoomDao dao = new RoomDao();
+			// Room room = dao.read(roomid);
+			// String name = room.getName();
+			switch (roomid) {
+			case 1:
+				request.setAttribute("name", "Opera");
+				break;
+			case 2:
+				request.setAttribute("name", "Verdi");
+				break;
+			case 3:
+				request.setAttribute("name", "Politecnico");
+				break;
+			case 4:
+				request.setAttribute("name", "Campus Einaudi");
+				break;
+			default:
+				request.setAttribute("name", "Palazzo nuovo");
+			}
+
+			switch (slotid) {
+			case 1:
+				request.setAttribute("ora", "mattina");
+				break;
+			default:
+				request.setAttribute("ora", "pomeriggio");
 			}
 
 			request.getRequestDispatcher("/succeded.jsp").forward(request, response);
