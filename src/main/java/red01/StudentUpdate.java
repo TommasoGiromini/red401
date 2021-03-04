@@ -40,7 +40,7 @@ public class StudentUpdate extends HttpServlet {
 			request.getRequestDispatcher(url).forward(request, response);
 			return;
 		}
-		
+
 		// RoomDao dao = new RoomDao();
 		// Room room = dao.read(roomid);
 		// String name = room.getName();
@@ -69,12 +69,17 @@ public class StudentUpdate extends HttpServlet {
 			request.setAttribute("ora", "pomeriggio");
 		}
 
-	
+		Slot seats = (Slot) request.getSession().getAttribute("selection");
 
-	Slot seats = (Slot) request.getSession().getAttribute("selection");
 		if (seats.getSeats(roomid, slotid) > 0) {
 			int freeseats = (int) seats.getSeats(roomid, slotid) - 1;
 			seats.setSeats(freeseats);
+			if (new SlotDao().update(seats)) {
+				request.setAttribute("seats", seats);
+			} else {
+				log.info("Can't merge " + seats);
+			}
+
 			request.getRequestDispatcher("/succeded.jsp").forward(request, response);
 		} else {
 

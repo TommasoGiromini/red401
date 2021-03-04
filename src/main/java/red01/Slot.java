@@ -37,7 +37,7 @@ public class Slot{
 		this.sid = sid;
 	}
 
-	public int getSeats(int roomid, int slotid) {
+	public int getSeats(long roomid, int slotid) {
 		return seats;
 	}
 
