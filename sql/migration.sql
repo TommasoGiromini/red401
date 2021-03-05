@@ -5,7 +5,7 @@ drop table if exists students;
 drop table if exists rooms;
 drop table if exists slots;
 drop table if exists managers;
-
+drop table if exists organizations;
 create table slots(
 
 room_id integer,

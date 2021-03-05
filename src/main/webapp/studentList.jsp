@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Can't login</title>
+<title>Student list</title>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script
@@ -43,41 +43,63 @@ h4 {
 	text-align: center;
 	font-size: 16px;
 	margin: auto;
-	width: 50%;
 	padding: 10px;
+}
+
+.Pick {
+	text-align: center;
 }
 </style>
 </head>
 <body>
-	<h1>Students</h1>
-	<table>
-		<tr>
-			<th>id</th>
-			<th>first name</th>
-			<th>last name</th>
-			<th>universitynumber</th>
-			<th>email</th>
-			<th>password</th>
-			<th>roomID</th>
-			<th>slotID</th>
+	<div class="titolo">
+		<h1>Save A Seat</h1>
+		<p>Riservati un posto in una delle aule studio di Torino</p>
+	</div>
+	<br>
 
+	<figure>
+		<img id="image" src="/red/img/download.jpg" height="200px"
+			width="500px">
+		<img id="image2" src="/red/img/download_1.jpg" height="200px"
+			width="350px">
+		<img id="image3" src="/red/img/aula-studio-opera.jpg" height="200px"
+			width="350px">
+	</figure>
+	<h2>Students</h2>
+	<br>
+	<section class="Pick">
 
-		</tr>
-		<c:forEach var="stud" items="${student}">
+		<table class="table">
 			<tr>
-				<td>${stud.id}</td>
-				<td>${stud.firstName}</td>
-				<td>${stud.lastName}</td>
-				<td>${stud.number}</td>
-				<td>${stud.email}</td>
-				<td>${stud.password}</td>
-				<td>${stud.roomId}</td>
-				<td>${stud.slotId}</td>
+				<th>id</th>
+				<th>&nbsp &nbsp &nbsp first name</th>
+				<th>&nbsp&nbsp&nbsp&nbsp last name</th>
+				<th>&nbsp&nbsp&nbsp universitynumber</th>
+				<th>&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp email</th>
+				<th>&nbsp&nbsp&nbsp&nbsp password</th>
+				<th>&nbsp&nbsp&nbsp&nbsp roomID</th>
+				<th>&nbsp&nbsp&nbsp&nbsp slotID</th>
+
+
 			</tr>
-		</c:forEach>
-	</table>
-	<p>
-		Back <a href="/red/adminlog.jsp">home</a>
-	</p>
+			<c:forEach var="stud" items="${student}">
+				<tr>
+					<td>${stud.id}</td>
+					<td>&nbsp&nbsp&nbsp&nbsp ${stud.firstName}</td>
+					<td>&nbsp&nbsp&nbsp&nbsp ${stud.lastName}</td>
+					<td>&nbsp&nbsp&nbsp&nbsp ${stud.number}</td>
+					<td>&nbsp&nbsp&nbsp&nbsp ${stud.email}</td>
+					<td>&nbsp&nbsp&nbsp&nbsp ${stud.password}</td>
+					<td>&nbsp&nbsp&nbsp&nbsp ${stud.roomId}</td>
+					<td>&nbsp&nbsp&nbsp&nbsp ${stud.slotId}</td>
+				</tr>
+			</c:forEach>
+		</table>
+		<br>
+		<p>
+			Back <a href="/red/adminlog.jsp">home</a>
+		</p>
+	</section>
 </body>
 </html>
