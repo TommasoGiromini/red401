@@ -78,7 +78,7 @@ h4 {
 		</div>
 	</form>
 	<br>
-	<form action="...." method="post">
+	<form action="/red/slot/list" method="post">
 		<div>
 			<button type="submit">Vedi posti disponibili</button>
 		</div>
