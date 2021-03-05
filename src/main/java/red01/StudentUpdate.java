@@ -24,16 +24,19 @@ public class StudentUpdate extends HttpServlet {
 		Integer roomid = Integer.parseInt(request.getParameter("roomid"));
 		Integer slotid = Integer.parseInt(request.getParameter("slotid"));
 
-		Slot slot = new Slot();
-		slot.setId(roomid);
-		slot.setSid(slotid);
+		
+		SlotDao dao = new SlotDao();
+		Slot slot = dao.read(roomid,slotid);
+		
 		int seats = slot.getSeats(roomid, slotid);
 
-		if (seats > 0) {
+		if (seats == 0) {
+			request.getRequestDispatcher("/noFreeSeats.jsp").forward(request, response);
+		} else {
 			int freeseats = seats - 1;
 			slot.setSeats(freeseats);
-			if (new SlotDao().update(slot)) {
-				request.setAttribute("seats", seats);
+			if (dao.update(slot)) {
+				request.setAttribute("seats", slot);
 			} else {
 				log.info("Can't merge " + seats);
 			}
@@ -84,11 +87,7 @@ public class StudentUpdate extends HttpServlet {
 			}
 
 			request.getRequestDispatcher("/succeded.jsp").forward(request, response);
-		} else {
-
-			request.getRequestDispatcher("/noFreeSeats.jsp").forward(request, response);
 		}
-
 	}
 
 	@Override

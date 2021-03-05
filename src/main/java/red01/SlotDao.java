@@ -25,12 +25,12 @@ public class SlotDao {
 		}
 	}
 
-	public Slot read(Integer id) {
+	public Slot read(Integer id , Integer sid) {
 		EntityManager em = null;
 		try {
 			em = JpaUtil.createEntityManager();
 
-			String jpql = "FROM Slot where Slod_ID='" + id + "'";
+			String jpql = "FROM Slot where slot_ID='" + sid + "'  and Room_ID='" + id + "'";
 			return (Slot) em.createQuery(jpql).getSingleResult();
 		} catch (Exception e) {
 			return null;
