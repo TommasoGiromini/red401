@@ -59,7 +59,7 @@ h4 {
 		<p>Riservati un posto in una delle aule studio di Torino</p>
 	</div>
 	<br>
-	
+
 	<figure>
 		<img id="image" src="/red/img/download.jpg" height="200px"
 			width="500px">
@@ -72,14 +72,29 @@ h4 {
 	<h2>Ciao ${param.useradm}</h2>
 
 	<p class='Pick'>
-		Vedi  <a href="/red/index.html"> elenco iscritti</a>  <br>
-		 Vedi <a href="/red/index.html">posti disponibili</a>
-		 <br> <br>
-		 Resetta <a href="/red/index.html">posti disponibili</a>
-		 
-		 
-		  <br>  <br>
-		  Back <a href="/red/index.html">home</a>
-	</p>
+	<form action="student/list" method="post">
+		<div>
+			<button type="submit">Vedi elenco iscritti</button>
+		</div>
+	</form>
+	<br>
+	<form action="...." method="post">
+		<div>
+			<button type="submit">Vedi posti disponibili</button>
+		</div>
+	</form>
+	<br>
+	<br>
+	<form action="...." method="post">
+		<div>
+			<button type="submit">Resetta posti disponibili</button>
+		</div>
+	</form>
+
+	<br>
+	<br> Back <a href="/red/index.html">home</a>
+
+
+	
 </body>
 </html>
