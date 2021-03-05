@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Can't login</title>
+<title>Slot List</title>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script
