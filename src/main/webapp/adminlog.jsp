@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -5,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Booked</title>
+<title>Logged</title>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script
 	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
@@ -53,8 +54,7 @@ h4 {
 </style>
 </head>
 <body>
-
-<div class="titolo">
+	<div class="titolo">
 		<h1>Save A Seat</h1>
 		<p>Riservati un posto in una delle aule studio di Torino</p>
 	</div>
@@ -68,10 +68,18 @@ h4 {
 		<img id="image3" src="/red/img/aula-studio-opera.jpg" height="200px"
 			width="350px">
 	</figure>
-	<h2>Ciao, ti sei prenotato con successo all'aula studio ${name} in ${address} per lo slot ${ora} <br>
-	Buono Studio!</h2>
-	<br>
-	<a href="/red/index.html">Home</a>
 
+	<h2>Ciao ${param.useradm}</h2>
+
+	<p class='Pick'>
+		Vedi  <a href="/red/index.html"> elenco iscritti</a>  <br>
+		 Vedi <a href="/red/index.html">posti disponibili</a>
+		 <br> <br>
+		 Resetta <a href="/red/index.html">posti disponibili</a>
+		 
+		 
+		  <br>  <br>
+		  Back <a href="/red/index.html">home</a>
+	</p>
 </body>
 </html>

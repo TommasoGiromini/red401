@@ -58,24 +58,27 @@ public class StudentUpdate extends HttpServlet {
 				return;
 			}
 
-			// RoomDao dao = new RoomDao();
-			// Room room = dao.read(roomid);
-			// String name = room.getName();
+		
 			switch (roomid) {
 			case 1:
 				request.setAttribute("name", "Opera");
+				request.setAttribute("address", "via Michelangelo 17bis");
 				break;
 			case 2:
 				request.setAttribute("name", "Verdi");
+				request.setAttribute("address", "via Verdi 26M");
 				break;
 			case 3:
 				request.setAttribute("name", "Politecnico");
+				request.setAttribute("address", "corso Duca Degli Abruzzi 24");
 				break;
 			case 4:
 				request.setAttribute("name", "Campus Einaudi");
+				request.setAttribute("address", "lungo Dora Siena 100A");
 				break;
 			default:
 				request.setAttribute("name", "Palazzo nuovo");
+				request.setAttribute("address", "via sant'Ottavio 20");
 			}
 
 			switch (slotid) {

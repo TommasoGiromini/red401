@@ -4,7 +4,7 @@ use red;
 drop table if exists students;
 drop table if exists rooms;
 drop table if exists slots;
-drop table if exists organizations;
+drop table if exists managers;
 
 create table slots(
 
@@ -43,18 +43,19 @@ insert into students (first_name,last_name, university_number,email,password,roo
 insert into students (first_name,last_name, university_number,email,password,room_id,slot_id) values ('Simona','Fartade', 204934, 's204934@studenti.polito.it','password', 1,2);
 insert into students (first_name,last_name, university_number,email,password,room_id,slot_id) values ('Tommaso','Giromini', 225685, 's225685@studenti.polito.it', 'password',1,2);
 
-create table organizations(
+create table managers(
 
-organization_id integer primary key auto_increment,
-organization_name varchar(20),
+manager_id integer primary key auto_increment,
 manager_name varchar(20),
 	manager_surname varchar(25) not null,
 	email varchar(25),
-	phone_number varchar(20)
+    password varchar(8),
+	phone_number varchar(20),
+    organization_name varchar(20)
 );
-insert into organizations (organization_name,manager_name,manager_surname,email,phone_number) values ('PoliTo','Mario','Ginobili','mario.ginobili@gmail.com','3926465377');
-insert into organizations (organization_name,manager_name,manager_surname,email,phone_number) values ('UniTo','Giulia','Rossi','giulia.rossi@gmail.com','3334756908');
-insert into organizations (organization_name,manager_name,manager_surname,email,phone_number) values ('Edisu','Silvano','Negri','s.negri@gmail.com','3247658943');
+insert into managers (manager_name, manager_surname, email, password,  phone_number, organization_name) values ('Mario','Ginobili','mario.ginobili@gmail.com', 'password','3926465377','PoliTo');
+insert into managers (manager_name, manager_surname, email, password, phone_number, organization_name) values ('Giulia','Rossi','giulia.rossi@gmail.com', 'password','3334756908', 'UniTo');
+insert into managers (manager_name, manager_surname, email, password, phone_number, organization_name) values ('Silvano','Negri','s.negri@gmail.com', 'password', '3247658943','Edisu');
 
 create table rooms(
 
@@ -64,14 +65,14 @@ capacity integer,
 location varchar(30),
 address varchar(30),
 city varchar(30),
-organization_id integer,
+manager_id integer,
 silent varchar(2),
-constraint rooms_fk foreign key(organization_id) references organizations(organization_id)
+constraint rooms_fk foreign key(manager_id) references managers(manager_id)
 );
- insert into rooms (name, capacity, location, address, city, organization_id, silent) values ('Aula Studio Opera','100', '45.05080786715206', 'via Michelangelo 17bis', 'Turin', '3', 'si');
- insert into rooms (name, capacity, location, address, city, organization_id, silent) values ('Verdi','150', '45.067539249059784', 'via Verdi 26M', 'Turin', '3', 'si');
- insert into rooms (name, capacity, location, address, city, organization_id, silent) values ('Politecnico', '200', '45.06417338819595', 'corso Duca Degli Abruzzi 24', 'Turin','1', 'no');
- insert into rooms (name, capacity, location, address, city, organization_id, silent) values ('Campus Einaudi', '180', '45.073670542813645', 'lungo Dora Siena 100A', 'Turin','2', 'si');
- insert into rooms (name, capacity, location, address, city, organization_id, silent) values ('Palazzo nuovo','250', '45.0681917369412', "via sant'Ottavio 20", 'Turin','2', 'no');
+ insert into rooms (name, capacity, location, address, city, manager_id, silent) values ('Aula Studio Opera','100', '45.05080786715206', 'via Michelangelo 17bis', 'Turin', '3', 'si');
+ insert into rooms (name, capacity, location, address, city, manager_id, silent) values ('Verdi','150', '45.067539249059784', 'via Verdi 26M', 'Turin', '3', 'si');
+ insert into rooms (name, capacity, location, address, city, manager_id, silent) values ('Politecnico', '200', '45.06417338819595', 'corso Duca Degli Abruzzi 24', 'Turin','1', 'no');
+ insert into rooms (name, capacity, location, address, city, manager_id, silent) values ('Campus Einaudi', '180', '45.073670542813645', 'lungo Dora Siena 100A', 'Turin','2', 'si');
+ insert into rooms (name, capacity, location, address, city, manager_id, silent) values ('Palazzo nuovo','250', '45.0681917369412', "via sant'Ottavio 20", 'Turin','2', 'no');
 
 commit;
