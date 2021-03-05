@@ -28,7 +28,7 @@ h4 {
  font-size: 16px;
 }
 
-.section1, section2 {
+.section1, section2, section3 {
 	background-color: rgb(255, 223, 223);
     text-align: center;
     font-size: 14px;
@@ -52,4 +52,7 @@ h4 {
 .Pick2{
     text-align: center;
         
+}
+.section3{
+	float: center;
 }
