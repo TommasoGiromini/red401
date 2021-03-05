@@ -72,7 +72,7 @@ h4 {
 	<h2>Ciao ${param.useradm}</h2>
 
 	<p class='Pick'>
-	<form action="student/list" method="post">
+	<form action="/red/student/list" method="post">
 		<div>
 			<button type="submit">Vedi elenco iscritti</button>
 		</div>

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -48,7 +49,7 @@ h4 {
 </style>
 </head>
 <body>
-	<h1>Coders</h1>
+	<h1>Students</h1>
 	<table>
 		<tr>
 			<th>id</th>
@@ -62,16 +63,16 @@ h4 {
 
 
 		</tr>
-		<c:forEach var="student" items="${student}">
+		<c:forEach var="stud" items="${student}">
 			<tr>
-				<td>${student.id}</td>
-				<td>${student.firstName}</td>
-				<td>${student.lastName}</td>
-				<td>${student.number}</td>
-				<td>${student.email}</td>
-				<td>${student.password}</td>
-				<td>${student.roomId}</td>
-				<td>${student.slotId}</td>
+				<td>${stud.id}</td>
+				<td>${stud.firstName}</td>
+				<td>${stud.lastName}</td>
+				<td>${stud.number}</td>
+				<td>${stud.email}</td>
+				<td>${stud.password}</td>
+				<td>${stud.roomId}</td>
+				<td>${stud.slotId}</td>
 			</tr>
 		</c:forEach>
 	</table>
