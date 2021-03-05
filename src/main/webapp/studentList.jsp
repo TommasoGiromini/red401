@@ -45,7 +45,8 @@ h4 {
 	margin: auto;
 	padding: 10px;
 }
-
+.table {
+text-align: center;}
 
 </style>
 </head>

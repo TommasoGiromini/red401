@@ -46,6 +46,8 @@ h4 {
 	width: 50%;
 	padding: 10px;
 }
+.table {
+text-align: center;}
 </style>
 </head>
 <body>
@@ -65,7 +67,7 @@ h4 {
 	</figure>
 	<h2>Slots</h2><br>
 	<section class="Pick">
-	<table>
+	<table class="table">
 		<tr>
 			<th>room id</th>
 			<th>&nbsp&nbsp&nbsp&nbsp slot id</th>
@@ -80,9 +82,9 @@ h4 {
 				
 			</tr>
 		</c:forEach>
-	</table><br>
+	</table></section><br>
 	<p>
 		Back <a href="/red/adminlog.jsp">home</a>
-	</p></section>
+	</p>
 </body>
 </html>

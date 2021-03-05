@@ -91,10 +91,10 @@ h4 {
 		</div>
 	</form>
 
-	<br>
+	<br></section>
 	<br> Back <a href="/red/index.html">home</a>
 
-</section>
+
 	
 </body>
 </html>
