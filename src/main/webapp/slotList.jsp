@@ -83,8 +83,13 @@ text-align: center;}
 			</tr>
 		</c:forEach>
 	</table></section><br>
-	<p>
-		Back <a href="/red/adminlog.jsp">home</a>
-	</p>
+	<br>
+		<p>
+			Back <a href="/red/adminlog.jsp">admin page</a>
+		</p>
+	<br>
+		<p>
+			Back <a href="/red/index.html">home</a>
+		</p>
 </body>
 </html>
