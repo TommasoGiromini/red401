@@ -37,10 +37,6 @@ h4 {
 	border: 1px solid black;
 }
 
-#spiegazione {
-	color: rgb(230, 16, 16);
-	text-align: center;
-}
 
 .Pick {
 	background-color: rgb(255, 183, 183);

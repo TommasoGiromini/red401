@@ -6,10 +6,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Logged</title>
+
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
 <script
 	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
 	
 <style>
 body{
@@ -25,12 +27,6 @@ h1{
     text-align: center; 
     
 }
-h4, a{
-    color: rgb(0, 0, 0);
-    font-family: Times New Roman;
-    font-size: 18px;
-    text-align: center; 
-    }
     
 .titolo{
     color:rgb(0, 0, 0);
@@ -40,22 +36,29 @@ h4, a{
     
 }
 
-#spiegazione{
- color: rgb(230, 16, 16);
- text-align : center; 
-}
-
 </style>
 </head>
 <body>
 
 <div class="titolo">
-	<h1>Save A Seat</h1>
-	<h4>Riservati un posto in una delle aule studio di Torino</h4>
+		<h1>Save A Seat</h1>
+		<p>Riservati un posto in una delle aule studio di Torino</p>
 	</div>
-	
-		<img id="image1" src="/red/img/download_1.jpg" width="300px">
-	<h1>Ciao ${param.email}, benvenuto!</h1>
+	<br>
+
+	<section class=Pick2>
+
+		<figure>
+
+			<img id="image" src="/red/img/download.jpg" height="200px"
+				width="500px">
+			<img id="image2" src="/red/img/download_1.jpg" height="200px"
+				width="350px">
+			<img id="image3" src="/red/img/aula-studio-opera.jpg" height="200px"
+				width="350px">
+		</figure>
+	</section>
+	<h2>Ciao ${param.email}, benvenuto!</h2>
 
 <br>
 	
