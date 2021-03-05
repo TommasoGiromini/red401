@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
+import javax.persistence.TypedQuery;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -68,5 +69,20 @@ public class SlotDao {
 			}
 		}
 	}
+	public List<Slot> getAll() {
+        EntityManager em = null;
+
+        try {
+            em = JpaUtil.createEntityManager();
+            String jpql = "FROM Slot sl";			
+            TypedQuery<Slot> tq = em.createQuery(jpql, Slot.class);
+            List<Slot> result = tq.getResultList();
+            return result;
+        } finally {
+            if (em != null) {
+                em.close();
+            }
+        }
+    }
 
 }

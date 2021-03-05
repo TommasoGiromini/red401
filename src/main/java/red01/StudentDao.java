@@ -44,19 +44,6 @@ public class StudentDao {
 	}
 	
 
-	public Optional<Student> read(int id) {
-		EntityManager em = null;
-
-		try {
-			em = JpaUtil.createEntityManager();
-			return Optional.ofNullable(em.find(Student.class, id));
-		} finally {
-			if (em != null) {
-				em.close();
-			}
-		}
-	}
-
 	public boolean create(Student student) {
 		log.trace("enter");
 		EntityManager em = null;
