@@ -68,15 +68,15 @@ h4 {
 	<table>
 		<tr>
 			<th>room id</th>
-			<th>slot id</th>
-			<th>free seats</th>
+			<th>&nbsp&nbsp&nbsp&nbsp slot id</th>
+			<th>&nbsp&nbsp&nbsp&nbsp free seats</th>
 			
 		</tr>
 		<c:forEach var="sl" items="${slot}">
 			<tr>
 				<td>${sl.id}</td>
-				<td>${sl.sid}</td>
-				<td>${sl.seats}</td>
+				<td>&nbsp&nbsp&nbsp&nbsp ${sl.sid}</td>
+				<td>&nbsp&nbsp&nbsp&nbsp ${sl.seats}</td>
 				
 			</tr>
 		</c:forEach>

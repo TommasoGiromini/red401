@@ -93,11 +93,11 @@ h4 {
 					<td>&nbsp&nbsp&nbsp&nbsp ${stud.slotId}</td>
 				</tr>
 			</c:forEach>
-		</table>
+		</table></section>
 		<br>
 		<p>
 			Back <a href="/red/adminlog.jsp">home</a>
 		</p>
-	</section>
+	
 </body>
 </html>
