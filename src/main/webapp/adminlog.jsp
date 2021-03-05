@@ -71,7 +71,7 @@ h4 {
 
 	<h2>Ciao ${param.useradm}</h2>
 
-	<p class='Pick'>
+<section class="Pick">
 	<form action="/red/student/list" method="post">
 		<div>
 			<button type="submit">Vedi elenco iscritti</button>
@@ -94,7 +94,7 @@ h4 {
 	<br>
 	<br> Back <a href="/red/index.html">home</a>
 
-
+</section>
 	
 </body>
 </html>

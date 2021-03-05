@@ -49,7 +49,22 @@ h4 {
 </style>
 </head>
 <body>
-	<h1>Slots</h1>
+<div class="titolo">
+		<h1>Save A Seat</h1>
+		<p>Riservati un posto in una delle aule studio di Torino</p>
+	</div>
+	<br>
+
+	<figure>
+		<img id="image" src="/red/img/download.jpg" height="200px"
+			width="500px">
+		<img id="image2" src="/red/img/download_1.jpg" height="200px"
+			width="350px">
+		<img id="image3" src="/red/img/aula-studio-opera.jpg" height="200px"
+			width="350px">
+	</figure>
+	<h2>Slots</h2><br>
+	<section class="Pick">
 	<table>
 		<tr>
 			<th>room id</th>
@@ -65,9 +80,9 @@ h4 {
 				
 			</tr>
 		</c:forEach>
-	</table>
+	</table><br>
 	<p>
 		Back <a href="/red/adminlog.jsp">home</a>
-	</p>
+	</p></section>
 </body>
 </html>

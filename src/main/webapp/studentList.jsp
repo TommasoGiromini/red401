@@ -46,9 +46,7 @@ h4 {
 	padding: 10px;
 }
 
-.Pick {
-	text-align: center;
-}
+
 </style>
 </head>
 <body>
