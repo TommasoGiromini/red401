@@ -51,6 +51,7 @@ h4 {
 	width: 50%;
 	padding: 10px;
 }
+
 </style>
 </head>
 <body>
@@ -83,14 +84,7 @@ h4 {
 			<button type="submit">Vedi posti disponibili</button>
 		</div>
 	</form>
-	<br>
-	<br>
-	<form action="...." method="post">
-		<div>
-			<button type="submit">Resetta posti disponibili</button>
-		</div>
-	</form>
-
+	
 	<br></section>
 	<br> Back <a href="/red/index.html">home</a>
 
